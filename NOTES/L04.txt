@@ -1,0 +1,141 @@
+-------------------------
+CSS Units of Measurement:
+-------------------------
+Units are used to express length for width, margin, font-size, etc.
+Common units:
+px (absolute)
+em (relative)
+% (relative)
+There's never a space between the value and the unit specifier.
+e.g.
+width: 400px;
+margin: 1.5em;
+font-size: 80%;
+margin: 0; (unit is omitted)
+
+See the following for more info on units:
+https://www.w3schools.com/cssref/css_units.asp
+
+--------------------------
+BLOCK vs. INLINE ELEMENTS:
+--------------------------
+Block Elements (do not share a line):
+<div>
+<header>
+<main>
+<footer>
+<nav>
+<p>
+<ul>
+<li>
+<section>
+<article>
+<form>
+<h1> - <h6>
+
+Inline Elements (can share a line, if there's room):
+<a>
+<img>
+<span>
+<button>
+<label>
+
+To make a block element into an inline element, target it in CSS with the following:
+<"element reference"> {display: inline;}
+e.g.
+#warm_list li {display: inline}
+
+To make an inline element into a block element, target it in CSS as:
+<name> {display: block;}
+e.g.
+main img {display: block';}
+
+The "inline-block" element has aspects of both block & inline elements, for example:
+Like a block, width and height can be set, and top and bottom marjins will work predictably.
+declaration = display: inline-block
+
+e.g. 
+
+CENTERING:
+Because of the above, centering works differently, depending on which elements, etc. are used.
+
+2 common ways of centering are:
+text-align: center;   (centers the contents of the box)
+
+	e.g.
+
+	main p, main h1{
+		text-align: center;
+	}
+
+	NOTE: This does NOT work with images, unless the image is changed to text-align block.
+	main img {
+		width: 300px;
+		display: block;
+		margin: 0 auto;
+		border: 2px solid red;
+	}
+
+margin: 0 auto;   (centers the box itself)
+	A width needs to be set, of the centering may not be evident.
+	e.g.
+
+	main p, main h1{
+		text-align: center;
+		width: 800px;
+		margin: 0 auto;
+		border: 2px solid red;
+	}
+
+----------------------------
+CSS SELECTORS & SPECIFICITY:
+----------------------------
+https://www.w3schools.com/cssref/css_selectors.asp
+https://www.w3schools.com/css/css_pseudo_classes.asp
+
+
+Selector Specificity Hierarchy:
+1. Inline styles
+External CSS:
+2. ID selector (e.g. #logo-link)
+3. Classes & pseudo-classes (e.g. .card-img or .card-img:hover)
+4. Elements (e.g. p, img, etc)
+
+Elements & Classes used together:
+img.heat {
+	width: 40%;
+	display: block;
+	margins: 0 auto;
+}
+img = element
+heat = class
+img.heat targets all images with the class of "heat".
+
+or 
+a.highlight targets everything with the element "a" with class "highlight"
+
+Apply to MULTIPLE (separate with commas):
+h1, h4 {
+	font-family: 'Lemon", 'Bradley Hand", sans-serif;
+	font-size: 45px;
+	color: #4b4b2a;
+}
+All the "h1" and "h4" elements will be affected.
+
+"DESCENDENT" CSS selectors:
+
+We can target all descendents of an element.
+e.g. if we want all paragraphs within the article element, 
+article p {
+	line-height: 1.5em;
+}
+
+p = descendent
+
+We can also target just images inside of a product_gallery element:
+#product_gallery img {
+	width: 50%;
+}
+
+
+
